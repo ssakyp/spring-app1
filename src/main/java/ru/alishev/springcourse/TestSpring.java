@@ -9,10 +9,20 @@ public class TestSpring {
         //MusicPlayer musicPlayer = new MusicPlayer(music);
 
         // dependency injection using applicationContext.xml
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);   //scope is singleton by default
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);  //scope is singleton by default
+
+        // prototype scope creates new bean every time
+        boolean compare = firstMusicPlayer == secondMusicPlayer;
+        System.out.println(compare);
+        System.out.println(firstMusicPlayer); // prints same hash means same object
+        System.out.println(secondMusicPlayer);
+
+        firstMusicPlayer.playMusic();
+        firstMusicPlayer.setVolume("43");
+        System.out.println(firstMusicPlayer.getName());
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(secondMusicPlayer.getVolume());
         context.close();
     }
 }
