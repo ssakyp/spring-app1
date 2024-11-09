@@ -2,11 +2,16 @@ package ru.alishev.springcourse;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //@Component("somePopMusic")
 public class PopMusic implements Music{
     @Override
-    public String getSong() {
-        return "Blinding Lights";
+    public List<String> getSong() {
+        List<String> musicList = new ArrayList<>();
+        musicList.add("Blinding Lights");
+        return musicList;
     }
 
     public void doMyInit(){
