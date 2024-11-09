@@ -1,11 +1,18 @@
 package ru.alishev.springcourse;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.event.ContextClosedEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Component
+//@Scope("singleton")
 public class ClassicalMusic implements Music{
     public ClassicalMusic(){}
 
@@ -24,10 +31,12 @@ public class ClassicalMusic implements Music{
     }
 
     // init destroy => public/protected/private void (no arguments)
+//    @PostConstruct
     public void doMyInit(){
         System.out.println("Doing my initialization of Classical Music.");
     }
 
+//    @PreDestroy
     public void doMyDestroy(){
         System.out.println("Doing my destruction of Classical Music.");
     }
