@@ -1,7 +1,10 @@
 package ru.alishev.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
-    private Music music;
+    private List<Music> musicList = new ArrayList<>();
 
     private String name;
     private String volume;
@@ -23,16 +26,26 @@ public class MusicPlayer {
     }
 
     // Inversion of Control
-    public MusicPlayer(Music music) {
-        this.music = music;     // polymorphism
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;     // polymorphism
     }
 
     public void playMusic(){
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: ");
+        int i = 0;
+        for(Music music : musicList){
+            if(i != musicList.size() - 1){
+                System.out.print(music.getSong() + ", ");
+            } else{
+                System.out.print(music.getSong());
+            }
+            i++;
+        }
+        System.out.println();
     }
 
-    public void setMusic(Music music) {
-        this.music = music;
+    public void setMusic(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public MusicPlayer(){
