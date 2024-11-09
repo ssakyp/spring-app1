@@ -31,12 +31,12 @@ public class ClassicalMusic implements Music{
     }
 
     // init destroy => public/protected/private void (no arguments)
-//    @PostConstruct
+    @PostConstruct
     public void doMyInit(){
         System.out.println("Doing my initialization of Classical Music.");
     }
 
-//    @PreDestroy
+    @PreDestroy
     public void doMyDestroy(){
         System.out.println("Doing my destruction of Classical Music.");
     }
