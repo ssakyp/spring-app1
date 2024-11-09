@@ -1,5 +1,6 @@
 package ru.alishev.springcourse;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         //Music music = context.getBean("musicBean", Music.class);
         //MusicPlayer musicPlayer = new MusicPlayer(music);
 
@@ -42,6 +43,7 @@ public class TestSpring {
 //        MusicPlayer musicPlayer = new MusicPlayer(musicList);
 //
 //        musicPlayer.playMusic();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic(Genre.CLASSICAl);

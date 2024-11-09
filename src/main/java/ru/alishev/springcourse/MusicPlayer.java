@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
+//@Component
 public class MusicPlayer {
     private final ClassicalMusic classicalMusic;
     private final RockMusic someRockMusic;
@@ -19,7 +19,7 @@ public class MusicPlayer {
 //    private Music music1;
 //    private Music music2;
 
-    @Autowired
+    //@Autowired
     public MusicPlayer(ClassicalMusic classicalMusic, RockMusic someRockMusic) {
 //        this.music1 = music1;
 //        this.music2 = music2;
@@ -61,7 +61,7 @@ public class MusicPlayer {
 //        this.music = music;
 //    }
 
-    // Inversion of Control
+     //Inversion of Control
 //    public MusicPlayer(List<Music> musicList) {
 //        this.musicList = musicList;     // polymorphism
 //    }

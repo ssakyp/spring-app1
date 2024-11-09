@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Component
+//@Component
 //@Scope("singleton")
 public class ClassicalMusic implements Music{
     public ClassicalMusic(){}

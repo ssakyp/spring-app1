@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("someRockMusic")
+//@Component("someRockMusic")
 public class RockMusic implements Music{
     @Override
     public List<String> getSong() {
