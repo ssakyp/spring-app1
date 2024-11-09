@@ -46,8 +46,8 @@ public class TestSpring {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic(Genre.CLASSICAl);
-        musicPlayer.playMusic(Genre.ROCK);
+        musicPlayer.playMusic();
+        musicPlayer.playMusic();
         System.out.println(musicPlayer.getName());
         System.out.println(musicPlayer.getVolume());
 

@@ -11,6 +11,8 @@ public class PopMusic implements Music{
     public List<String> getSong() {
         List<String> musicList = new ArrayList<>();
         musicList.add("Blinding Lights");
+        musicList.add("Shape of You.");
+        musicList.add("Uptown Funk");
         return musicList;
     }
 
